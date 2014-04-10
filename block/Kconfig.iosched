@@ -12,17 +12,6 @@ config IOSCHED_NOOP
 	  that do their own scheduling and require only minimal assistance from
 	  the kernel.
 
-config IOSCHED_TEST
-	tristate "Test I/O scheduler"
-	depends on DEBUG_FS
-	default m
-	---help---
-	  The test I/O scheduler is a duplicate of the noop scheduler with
-	  addition of test utlity.
-	  It allows testing a block device by dispatching specific requests
-	  according to the test case and declare PASS/FAIL according to the
-	  requests completion error code.
-
 config IOSCHED_DEADLINE
 	tristate "Deadline I/O scheduler"
 	default y
@@ -99,6 +88,14 @@ config IOSCHED_SIO
 	  mainly for aleatory access devices (eg: flash devices).
 >>>>>>> 9e7b925... Added SIO I/O Scheduler
 
+config IOSCHED_FIOPS
+	tristate "IOPS based I/O scheduler"
+	default y
+	---help---
+	  This is an IOPS based I/O scheduler. It will try to distribute
+          IOPS equally among all processes in the system. It's mainly for
+          Flash based storage.
+
 choice
 	prompt "Default I/O scheduler"
 	default DEFAULT_CFQ
@@ -122,8 +119,16 @@ choice
 	config DEFAULT_CFQ
 		bool "CFQ" if IOSCHED_CFQ=y
 
+<<<<<<< HEAD
 	config DEFAULT_BFQ
 		bool "BFQ" if IOSCHED_BFQ=y
+=======
+	config DEFAULT_SIO
+		bool "SIO" if IOSCHED_SIO=y
+
+	config DEFAULT_FIOPS
+                bool "FIOPS" if IOSCHED_FIOPS=y
+>>>>>>> 4e3ec16... Added FIOPS I/O Scheduler
 
 	config DEFAULT_NOOP
 		bool "No-op"
@@ -139,7 +144,11 @@ config DEFAULT_IOSCHED
 	default "bfq" if DEFAULT_BFQ
 =======
         default "sio" if DEFAULT_SIO
+<<<<<<< HEAD
 >>>>>>> 9e7b925... Added SIO I/O Scheduler
+=======
+	default "fiops" if DEFAULT_FIOPS
+>>>>>>> 4e3ec16... Added FIOPS I/O Scheduler
 	default "noop" if DEFAULT_NOOP
 
 endmenu

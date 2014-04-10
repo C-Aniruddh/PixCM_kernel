@@ -20,8 +20,12 @@ obj-$(CONFIG_IOSCHED_CFQ)	+= cfq-iosched.o
 obj-$(CONFIG_IOSCHED_BFQ)	+= bfq-iosched.o
 =======
 obj-$(CONFIG_IOSCHED_SIO)       += sio-iosched.o
+<<<<<<< HEAD
 >>>>>>> 9e7b925... Added SIO I/O Scheduler
 obj-$(CONFIG_IOSCHED_TEST)	+= test-iosched.o
+=======
+obj-$(CONFIG_IOSCHED_FIOPS)     += fiops-iosched.o
+>>>>>>> 4e3ec16... Added FIOPS I/O Scheduler
 
 obj-$(CONFIG_BLOCK_COMPAT)	+= compat_ioctl.o
 obj-$(CONFIG_BLK_DEV_INTEGRITY)	+= blk-integrity.o
