@@ -37,7 +37,11 @@ obj-$(CONFIG_IOSCHED_ZEN)	+= zen-iosched.o
 >>>>>>> 5e90e2b... Added Zen IO scheduler
 =======
 obj-$(CONFIG_IOSCHED_ROW)	+= row-iosched.o
+<<<<<<< HEAD
 >>>>>>> b84c51b... Added ROW (Read Over Write) I/O scheduler
+=======
+obj-$(CONFIG_IOSCHED_SIOPLUS)   += sioplus-iosched.o
+>>>>>>> d301bc1... Added Simple IO scheduler plus
 
 obj-$(CONFIG_BLOCK_COMPAT)	+= compat_ioctl.o
 obj-$(CONFIG_BLK_DEV_INTEGRITY)	+= blk-integrity.o
