@@ -25,7 +25,11 @@ obj-$(CONFIG_IOSCHED_SIO)       += sio-iosched.o
 obj-$(CONFIG_IOSCHED_TEST)	+= test-iosched.o
 =======
 obj-$(CONFIG_IOSCHED_FIOPS)     += fiops-iosched.o
+<<<<<<< HEAD
 >>>>>>> 4e3ec16... Added FIOPS I/O Scheduler
+=======
+obj-$(CONFIG_IOSCHED_VR)	+= vr-iosched.o
+>>>>>>> 8b1c4f6... Added V(R) I/O Scheduler
 
 obj-$(CONFIG_BLOCK_COMPAT)	+= compat_ioctl.o
 obj-$(CONFIG_BLK_DEV_INTEGRITY)	+= blk-integrity.o
