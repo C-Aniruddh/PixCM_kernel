@@ -103,6 +103,13 @@ config IOSCHED_VR
 	  Requests are chosen according to SSTF with a penalty of rev_penalty
 	  for switching head direction.
 
+config IOSCHED_ZEN
+	tristate "Zen I/O scheduler"
+	default y
+	---help---
+	  FCFS, dispatches are back-inserted, deadlines ensure fairness.
+	  Should work best with devices where there is no travel delay.
+
 choice
 	prompt "Default I/O scheduler"
 	default DEFAULT_CFQ
@@ -140,6 +147,9 @@ choice
 	config DEFAULT_VR
 		bool "V(R)" if IOSCHED_VR=y
 
+	config DEFAULT_ZEN
+		bool "ZEN" if IOSCHED_ZEN=y
+
 	config DEFAULT_NOOP
 		bool "No-op"
 
@@ -158,7 +168,12 @@ config DEFAULT_IOSCHED
 >>>>>>> 9e7b925... Added SIO I/O Scheduler
 =======
 	default "fiops" if DEFAULT_FIOPS
+<<<<<<< HEAD
 >>>>>>> 4e3ec16... Added FIOPS I/O Scheduler
+=======
+ 	default "vr" if DEFAULT_VR
+	default "zen" if DEFAULT_ZEN
+>>>>>>> 5e90e2b... Added Zen IO scheduler
 	default "noop" if DEFAULT_NOOP
 
 endmenu

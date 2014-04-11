@@ -29,7 +29,11 @@ obj-$(CONFIG_IOSCHED_FIOPS)     += fiops-iosched.o
 >>>>>>> 4e3ec16... Added FIOPS I/O Scheduler
 =======
 obj-$(CONFIG_IOSCHED_VR)	+= vr-iosched.o
+<<<<<<< HEAD
 >>>>>>> 8b1c4f6... Added V(R) I/O Scheduler
+=======
+obj-$(CONFIG_IOSCHED_ZEN)	+= zen-iosched.o
+>>>>>>> 5e90e2b... Added Zen IO scheduler
 
 obj-$(CONFIG_BLOCK_COMPAT)	+= compat_ioctl.o
 obj-$(CONFIG_BLK_DEV_INTEGRITY)	+= blk-integrity.o
